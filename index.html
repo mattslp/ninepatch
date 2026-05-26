@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nine Patch Collective</title>
+  <link rel="icon" type="image/jpg" href="/favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -32,6 +33,28 @@
       overflow-x: hidden;
     }
 
+    /* ══════════════════════════════
+       NAV
+    ══════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      padding: 18px 48px;
+      background: rgba(250,246,241,0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo svg {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
     /* ── NOISE TEXTURE OVERLAY ── */
     body::before {
       content: '';
@@ -54,56 +77,7 @@
       pointer-events: none;
     }
 
-    /* ══════════════════════════════
-       NAV
-    ══════════════════════════════ */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 48px;
-      background: rgba(250,246,241,0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
 
-    .nav-logo svg {
-      height: 36px;
-      width: auto;
-      display: block;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-soft);
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--teal); }
-
-    .nav-cta {
-      background: var(--teal);
-      color: #fff !important;
-      padding: 9px 22px;
-      border-radius: 4px;
-      transition: background 0.2s !important;
-    }
-
-    .nav-cta:hover { background: var(--teal-mid) !important; color: #fff !important; }
 
     /* ══════════════════════════════
        HERO
@@ -638,8 +612,6 @@
        RESPONSIVE
     ══════════════════════════════ */
     @media (max-width: 900px) {
-      nav { padding: 16px 24px; }
-      .nav-links { display: none; }
 
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-left { padding: 60px 28px; }
@@ -670,7 +642,6 @@
   <!-- ══ NAV ══ -->
   <nav>
     <a class="nav-logo" href="#">
-      <!-- Logo mark only (squares) -->
       <svg viewBox="294 0 248.36 186.15" xmlns="http://www.w3.org/2000/svg">
         <defs><style>.cls-1{fill:#045359}.cls-2{fill:#85d4d6}</style></defs>
         <rect class="cls-1" x="418.26" y="0" width="62.05" height="62.05"/>
@@ -684,12 +655,6 @@
         <rect class="cls-2" x="356.21" y="124.1" width="62.05" height="62.05"/>
       </svg>
     </a>
-    <ul class="nav-links">
-      <li><a href="#programs">Programs</a></li>
-      <li><a href="#values">About</a></li>
-      <li><a href="#get-involved">Get Involved</a></li>
-      <li><a href="#" class="nav-cta">Donate</a></li>
-    </ul>
   </nav>
 
   <!-- ══ HERO ══ -->
@@ -943,13 +908,7 @@
           <path class="fw2" d="M239.96,185.59v-30.28h7.64v30.28h-7.64ZM246.02,161.76v-6.45h16.19v6.45h-16.19ZM246.02,173.29v-6.28h14.86v6.28h-14.86ZM246.02,185.59v-6.45h16.4v6.45h-16.4Z"/>
         </svg>
       </div>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="#programs">Programs</a>
-        <a href="#values">About</a>
-        <a href="#get-involved">Get Involved</a>
-        <a href="mailto:hello@ninepatchcollective.org">Contact</a>
-        <a href="#">Donate</a>
-      </nav>
+
     </div>
 
     <p class="footer-legal">
